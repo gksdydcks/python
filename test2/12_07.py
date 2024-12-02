@@ -23,4 +23,4 @@ if user == '소비자':
 if user == '주인':
     fix = input("추가, 삭제 : ")
     if fix =='추가':
-        vending_machine.append = input
+        vending_machine.append = input s
