@@ -20,7 +20,7 @@ sentence = "{}월 {}일".format(12,2) #12월 2일 {} 안에 쓴 순서대로 나
 print(sentence)
 
 b = "   111     222     " 
-print(b.replace("111, 222"))
+#print(b.replace("111, 222"))
 #print(b.strip())  #srtip = 앞뒤 공백만 제거 lstrip() = 왼쪽 제거, rstrip() = 오른쪽 제거
 #print(b.split())
 

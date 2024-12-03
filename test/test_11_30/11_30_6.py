@@ -18,7 +18,4 @@ print(first + d[first:].index("서"))#두번째 "서" 찾기
 
 print(d.count("서"))
 
-rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple']
 
-rainbow.sort()
-print(rainbow)
