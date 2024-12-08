@@ -71,7 +71,7 @@
 
 
                 ##복습문제5(딕셔너리)  추억점수               #김다운 크루#김희수 크루
-##1번방법 !!!시간초과 남
+    ##1번방법 !!!시간초과 남
 def solution(name, yearning, photo):
     answer = []
     for i in range(len(photo)):
@@ -82,7 +82,7 @@ def solution(name, yearning, photo):
         answer.append(sum)     
     return answer
 
-##2번방법 !!!딕셔너리!!! 시간초과 안나게
+    ##2번방법 !!!딕셔너리!!!  zip사용 !딕셔너리 사용하면 시간초과 안남
 def solution(name, yearning, photo):
     answer = []
     d = {}
@@ -97,5 +97,28 @@ def solution(name, yearning, photo):
                 sum +=v
         answer.append(sum)
     return answer
+    ##3번 방법 !딕셔너리 사용 zip사용x
+def solution(name, yearning, photo):
+    answer = []
+    d = dict()
+    
+    for i in range(len(name)):
+        d[name[i]] = yearning[i]
+    
+    for j in photo:
+        total = 0
+        for names in j:
+            if names in d:
+                total += d[names]
+        answer.append(total)
+    
+    return answer
 
-                ##복습문제 6
+                ##복습문제 6 (list 슬라이싱) 크기가 작은 부분 문자열
+def solution(t, p):
+    answer = 0
+    lp =len(p)
+    for i in range(len(t)-lp+1):
+        if t[i:i+lp] <= p:
+            answer+=1
+    return answer
