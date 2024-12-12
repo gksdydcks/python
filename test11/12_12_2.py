@@ -55,26 +55,41 @@
 
 
                 ###실습3)로그인 성공시 전화번호 저장하기
-dictUser = {}       
+import sys
+ 
+def successLogin(name, pw):
+    dictUser = {}
+    with open("./output/members.txt", "r") as a:
+        for line in a:
+            n ,p = line.split()
+            dictUser[n] = p 
+    # print(dictUser)
+    return pw == dictUser.get(name)
 
-with open("./output/members.txt", "r") as a:
-    for line in a:
-        n, p = line.split()
-        dictUser[n] = p
+name = input("이름을 입력하세요 : ")
+pw = input("비밀번호를 입력하세요 : ")
 
-name = input("이름을 입력하세요: ")
-pw = input("비밀번호를 입력하세요: ")
+if successLogin(name, pw)== False:
+    print("로그인 실패")
+    sys.exit(0)
 
-if pw == dictUser.get(name):
-    print("로그인 성공!")
-    with open("./output/members_tel.txt", "a") as b:
-        tel = input(("전화번호를 입력하세요 : "))
-        b.write(f"{name}  {tel}\n")
-        b_b= open("./output/members_tel.txt", "r")
-        for i in b_b:
-            if b_b in name:
-                b_b.seek(5)
-                print(b.write(tel))
+print("로그인 성공")
+tel = input("전화번호를 입력하세요 : ")
 
-else:
-    print("로그인 실패!")
+with open("./output/members_tel.txt", "r") as a:
+    tel_list = a.readlines()
+    print(tel_list)
+
+user_tel = name + " " + tel + "\n"
+
+with open("./output/members_tel.txt", "w") as a:
+    write = False
+    for i in tel_list:
+        if i.split()[0]== name:
+            a.write(user_tel)
+            write = True
+        else:
+            a.write(i)
+    if not write:
+        print("not write", user_tel)
+        a.write(user_tel)
