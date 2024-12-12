@@ -11,7 +11,7 @@
 
 
 # f3= open("text.txt", "a")        #"a" = 내용 추가
-# f3.write("hello world222\n")      
+# f3.write("hello world222" +"Hi\n" +"bye\n")      
 # f3.close()    
 
 # f2= open("text.txt")
@@ -25,12 +25,16 @@
 # f.close()                   
 
 
-f2= open("text.txt")        
-print(f2.read())       
-f2.close()    
+# f2= open("text.txt")        
+# print(f2.read())       
+# f2.close()    
 
-f3= open("text.txt")           #readline = 한줄씩 처리
-print(f3.readline(), end ="")
-print(f3.readline(), end ="") 
-print(f3.readline(), end ="")    
-f3.close()    
+# f3= open("text.txt")           #readline = 한줄씩 처리
+# print(f3.readline(), end ="")
+# print(f3.readline(), end ="") 
+# print(f3.readline(), end ="")    
+# f3.close()   
+  
+f4= open("text.txt")            #readline = 한줄씩 처리
+print(f4.readlines())
+f4.close()    
