@@ -56,13 +56,12 @@
 
                 ###실습3)로그인 성공시 전화번호 저장하기
 import sys
- 
 def successLogin(name, pw):
     dictUser = {}
     with open("./output/members.txt", "r") as a:
         for line in a:
             n ,p = line.split()
-            dictUser[n] = p 
+            dictUser[n] = p     #딕셔너리 key, value 설정
     # print(dictUser)
     return pw == dictUser.get(name)
 
